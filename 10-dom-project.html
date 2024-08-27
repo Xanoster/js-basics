@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Amazon </title>
 </head>
 <style>
-    .d1{
-       margin: 10px;
+    .but{
+border-radius: 100px;
+background-color: black;
+color: white;
 padding: 10px;
+font-weight: bold;
+cursor: pointer;
     }
-    .d2{
-       margin: 10px;
+.isSubed{
+    border-radius: 100px;
+background-color: grey;
+color: black;
 padding: 10px;
-    }
+font-weight: bold;
+cursor: pointer;
+}
 </style>
 <body>
     <div class="d1">
     <h1 class="h1">YouTube Subscribe Button</h1>
-<button onclick="Subscribe()" id="but">SUBSCRIBE</button>
+<button onclick="Subscribe()" class="but">Subscribe</button>
 </div>
-
 
 <div class="d2">
 <h1 id="h2">Amazon Shipping Calculator</h1>
@@ -30,17 +37,19 @@ if(event.key==='Enter'){
     Calculate();
 }"
 ></input>
-<button onclick="Calculate()">Calculate</button>
+<button onclick="Calculate()" id="cal">Calculate</button>
 <p id="charges"></p>
 </div>
     <script>
-        let a=document.getElementById('but');
+       let a=document.querySelector('.but');
      function Subscribe(){
-        if(a.innerText==='SUBSCRIBE'){
+        if(a.innerText==='Subscribe'){
             a.innerText='Subscribed'
+            a.classList.add('isSubed');
         }
 else{
-        a.innerText='SUBSCRIBE';
+        a.innerText='Subscribe';
+        a.classList.remove('isSubed');
      }
     }
 
@@ -53,7 +62,7 @@ else{
     }
     else{
         amount+=10;
-       c.innerText=`$${amount}`;
+       c.innerText=`$${amount.toFixed(2)}`;
     }
     }
     </script>
