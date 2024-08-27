@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .d1{
+       margin: 10px;
+padding: 10px;
+    }
+    .d2{
+       margin: 10px;
+padding: 10px;
+    }
+</style>
+<body>
+    <div class="d1">
+    <h1 class="h1">YouTube Subscribe Button</h1>
+<button onclick="Subscribe()" id="but">SUBSCRIBE</button>
+</div>
+
+
+<div class="d2">
+<h1 id="h2">Amazon Shipping Calculator</h1>
+<input id="inputbox" placeholder="Enter Amount" onkeydown="
+console.log(event.key);
+if(event.key==='Enter'){
+    Calculate();
+}"
+></input>
+<button onclick="Calculate()">Calculate</button>
+<p id="charges"></p>
+</div>
+    <script>
+        let a=document.getElementById('but');
+     function Subscribe(){
+        if(a.innerText==='SUBSCRIBE'){
+            a.innerText='Subscribed'
+        }
+else{
+        a.innerText='SUBSCRIBE';
+     }
+    }
+
+    function Calculate(){
+       let c= document.getElementById('charges')
+ let b=document.getElementById('inputbox');
+ let amount=parseFloat(b.value);
+    if(amount>50){
+      c.innerText=`$${amount}`;
+    }
+    else{
+        amount+=10;
+       c.innerText=`$${amount}`;
+    }
+    }
+    </script>
+</body>
+</html>
