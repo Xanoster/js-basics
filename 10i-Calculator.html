@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="Styles/10i-Calculator.css">
 </head>
-<link rel="stylesheet" href="Styles/10i-Calculator.css">
 <body>
     <div class="main">
-        <p class="result"></p><br>
-        <button class="number" onclick="display(9)">9</button>
-        <button class="number" onclick="display(8)">8</button>
-        <button class="number" onclick="display(7)">7</button>
-        <button class="actions" onclick="display('X')">X</button><br>
-        <button class="number" onclick="display(6)">6</button>
-        <button class="number" onclick="display(5)">5</button>
-        <button class="number" onclick="display(4)">4</button>
-        <button class="actions" onclick="display('-')">-</button><br>
-        <button class="number" onclick="display(3)">3</button>
-        <button class="number" onclick="display(2)">2</button>
-        <button class="number" onclick="display(1)">1</button>
-        <button class="actions" onclick="display('+')">+</button><br>
-         <button class="number" onclick="display(0)">0</button>
-        <button class="number" onclick="display('.')">.</button>
-        <button class="number" onclick="display('=')">=</button>
-        <button class="number" onclick="display('/')">/</button>
-        <br>
-        <button class="number clear" onclick="clear()">Clear</button>
+        <p class="show-clicked"></p><br>
+        <button class="number" onclick="clickedNumber('9')">9</button>
+        <button class="number" onclick="clickedNumber('8')">8</button>
+        <button class="number" onclick="clickedNumber('7')">7</button>
+        <button class="actions" onclick="clickedNumber('*')">*</button><br>
+        <button class="number" onclick="clickedNumber('6')">6</button>
+        <button class="number" onclick="clickedNumber('5')">5</button>
+        <button class="number" onclick="clickedNumber('4')">4</button>
+        <button class="actions" onclick="clickedNumber('-')">-</button><br>
+        <button class="number" onclick="clickedNumber('3')">3</button>
+        <button class="number" onclick="clickedNumber('2')">2</button>
+        <button class="number" onclick="clickedNumber('1')">1</button>
+        <button class="actions" onclick="clickedNumber('+')">+</button><br>
+        <button class="number" onclick="clickedNumber('0')">0</button>
+        <button class="number" onclick="clickedNumber('.')">.</button>
+        <button class="number" onclick="clickedNumber('=')">=</button>
+        <button class="actions" onclick="clickedNumber('/')">/</button><br>
+        <button class="number clear" onclick="clearResults()">Clear</button>
     </div>
     <script src="Scripts/10i-Calculator.js"></script>
 </body>
