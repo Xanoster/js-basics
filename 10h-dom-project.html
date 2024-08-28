@@ -1,0 +1,86 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Amazon </title>
+    </head>
+    <style>
+        .but{
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+        }
+    .isSubed{
+        border-radius: 100px;
+    background-color: rgb(220, 220, 220);
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    }
+    #cal{
+        background-color: green;
+        color: white;
+        border: none;
+        margin-left: 2px;
+        padding: 6px;
+    }
+    #inputbox{
+        padding: 5px;
+    }
+    </style>
+    <body>
+        <div class="d1">
+        <h1 class="h1">YouTube Subscribe Button</h1>
+    <button onclick="Subscribe()" class="but">Subscribe</button>
+    </div>
+
+    <div class="d2">
+    <h1 id="h2">Amazon Shipping Calculator</h1>
+    <input id="inputbox" placeholder="Enter Amount" onkeydown="
+    console.log(event.key);
+    if(event.key==='Enter'){
+        Calculate();
+    }"
+    ></input>
+    <button onclick="Calculate()" id="cal">Calculate</button>
+    <p id="charges"></p>
+    </div>
+    <h1>Click here to Play Rock Paper Scissors</h1>
+     <a href="10-rock-paper-dom.html">Click Here</a>
+        <script>
+        let a=document.querySelector('.but');
+        function Subscribe(){
+            if(a.innerText==='Subscribe'){
+                a.innerText='Subscribed'
+                a.classList.add('isSubed');
+            }
+    else{
+            a.innerText='Subscribe';
+            a.classList.remove('isSubed');
+        }
+        }
+
+        function Calculate(){
+        let c= document.getElementById('charges')
+    let b=document.getElementById('inputbox');
+    let amount=parseFloat(b.value);
+        if(amount>50){
+        c.innerText=`$${amount}`;
+        }
+        else if(amount<0){
+        c.innerText="Please enter a valid number"
+        c.style.color="red";
+        }
+        else{
+            amount+=10;
+        c.innerText=`$${amount.toFixed(2)}`;
+        }
+        }
+        </script>
+    </body>
+    </html>
