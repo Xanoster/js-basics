@@ -1,5 +1,7 @@
-function show(num){
-    console.log(num)
-const result=document.querySelector('.result')
-result.innerText=num;
+let input="";
+let operator=NULL;
+let result="";
+
+function display(num){
+    
 }
