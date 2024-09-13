@@ -1,7 +1,14 @@
-let output=""
-let curr=""
-let prev=""
-let operator=""
+let output=localStorage.getItem('output') || "";
+let curr=localStorage.getItem('curr') || "";
+let prev=localStorage.getItem('prev') || "";
+let operator=localStorage.getItem('operator') || "";
+
+function updateLocalStorage(){
+    localStorage.setItem('output',output);
+    localStorage.setItem('curr',curr);
+    localStorage.setItem('prev',prev);
+    localStorage.setItem('operator',operator);
+}
 
 function clickedNumber(num){
 switch(num){
@@ -24,6 +31,7 @@ switch(num){
                             output+=num;
                             break;
 }
+updateLocalStorage();
 display();
 }
 
@@ -50,6 +58,8 @@ output=result;
 prev=output;
 curr=output;
 operator=""
+updateLocalStorage();
+display();
 }
 
 function display(){
@@ -63,4 +73,6 @@ function clearResults(){
     operator=""
     const b=document.querySelector('.show-clicked')
     b.innerText= ""   
+    updateLocalStorage();
 }
+display();
