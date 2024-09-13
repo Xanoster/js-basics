@@ -48,7 +48,7 @@ case '+':
 }
 output=result;
 prev=output;
-curr=""
+curr=output;
 operator=""
 }
 
