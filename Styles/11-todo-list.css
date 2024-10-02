@@ -1,0 +1,17 @@
+.input-box{
+    height: 20px;
+    width: 150px;
+    margin: 10px;
+    border: 1px solid rgb(125, 124, 124);
+    border-radius: 3px;
+}
+.whole{
+    padding: 5px;
+    align-content: center;
+    border: 1px solid rgb(125, 124, 124);
+    border-radius: 3px;
+}
+.add-button{
+    border: 1px solid rgb(125, 124, 124);
+    border-radius: 3px;
+}
