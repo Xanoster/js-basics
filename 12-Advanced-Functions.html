@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    <script>
+        function greeting(){
+            console.log("hello");
+        }
+        greeting();
+
+        const num=2;
+
+        const hello_fxn=function greeting(){
+            console.log('hellwo');
+        }
+        hello_fxn();
+
+        //CALLBACK FUNCTION
+
+        function run(a){
+            a();
+        }
+        
+        run(function(){
+            console.log('hi i am a callback function');
+        })
+
+        //timeout function
+        setTimeout(function(){
+            console.log("Hi < timeout")
+        },3000);
+
+        setInterval(function(){
+            console.log("Hi I am interval")},1000);
+        
+    </script>
+</body>
+</html>
