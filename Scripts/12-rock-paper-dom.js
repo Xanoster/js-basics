@@ -5,18 +5,23 @@ let Score = JSON.parse(localStorage.getItem('Score')) || {
 };
 
 function updateScore() {
-    document.querySelector('.js-scores').innerHTML = `Loses = ${Score.loses} & Wins = ${Score.Wins} & Ties = ${Score.ties}`;
+    document.querySelector('.js-scores').innerHTML =
+     `Loses = ${Score.loses} & Wins = ${Score.Wins} & Ties = ${Score.ties}`;
 }
 
 
-function resetScore() {
+
+const reset=function resetScore() {
     Score.Wins = 0;
     Score.loses = 0;
     Score.ties = 0;
     localStorage.removeItem('Score');
     updateScore(); 
 }
-
+document.querySelector('.Reset-button')
+.addEventListener('click',()=>{
+    reset();
+})
 
 function pickComputerMove() {
     const random = Math.random();
@@ -31,7 +36,7 @@ function pickComputerMove() {
 let isAutoPlaying=false;
 let intervalId=0;
 
-function autoPlay(){
+const playAuto=function autoPlay(){
     if(!isAutoPlaying){
 intervalId = setInterval(function(){
         const playerMove=pickComputerMove();
@@ -43,7 +48,44 @@ intervalId = setInterval(function(){
     isAutoPlaying=false;
 }
 }
+document.querySelector('.autoplay-button')
+.addEventListener('click',()=>{
+    playAuto();
+})
 
+document.querySelector('.js-rock')
+.addEventListener('click',()=>{
+    playGame('rock');
+})
+document.querySelector('.js-paper')
+.addEventListener('click',()=>{
+    playGame('paper');
+})
+document.querySelector('.js-scissor')
+.addEventListener('click',()=>{
+    playGame('scissor');
+})
+//play by pressing key
+document.body.addEventListener('keydown',(event)=>{
+if(event.key==='r'){
+playGame('rock');
+}
+else if(event.key==='p'){
+playGame('paper');
+}
+else if(event.key==='s'){
+playGame('scissor');
+} 
+else if(event.key==='a'){
+   playAuto();
+}
+else if(event.key=='z'){
+    reset();
+}
+else{
+alert("Invalid")
+}
+});
 function playGame(playerMove) {
     const cm = pickComputerMove();
     let result = '';
@@ -82,6 +124,9 @@ function playGame(playerMove) {
             Score.loses++;
         }
     }
+
+ 
+
     localStorage.setItem('Score', JSON.stringify(Score));
     document.querySelector('.js-scores').innerHTML = `<p class="result-class"> Result : ${result} </p>
         <p>You <img src="images/${playerMove}-emoji.png" class="button-img">

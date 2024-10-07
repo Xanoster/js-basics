@@ -6,7 +6,23 @@
     <title>Advanced Functions</title>
 </head>
 <body>
+    <button onclick="" class="js-button">Click</button>
+
     <script>
+        //add event listner allows us to add multiple event listners
+    const buttonElemen=document.querySelector('.js-button');
+    const eventListner1=()=>{
+        console.log('clicked2');
+    buttonElemen.addEventListener('click',()=>{
+        console.log("CLicked")
+    });
+    buttonElemen.removeEventListener('click',
+        eventListner1);
+      }
+    buttonElemen.addEventListener('click',()=>{
+        console.log('clicked2');
+    })
+      
         function greeting(){
             console.log("hello");
         }
@@ -48,6 +64,7 @@
 
                 }
             };
+
     </script>
 </body>
 </html>
